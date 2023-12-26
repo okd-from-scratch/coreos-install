@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+
 if [ ! -e /root/.done ]; then
   if kill -9 `lsof -t +D /old_root`; then
     sleep 1

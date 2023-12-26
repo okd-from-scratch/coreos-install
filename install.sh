@@ -38,8 +38,7 @@ rm -f /takeover/etc/motd
 curl -o /takeover/root/coreos-installer https://raw.githubusercontent.com/okd-from-scratch/coreos-install/main/coreos-installer
 chmod +x /takeover/root/coreos-installer
 curl -o /takeover/takeover.sh https://raw.githubusercontent.com/okd-from-scratch/coreos-install/main/takeover.sh
-curl -o /takeover/root/.bashrc https://raw.githubusercontent.com/okd-from-scratch/coreos-install/main/bashrc
-chmod 0700 /takeover/root/.bashrc
+curl -o - https://raw.githubusercontent.com/okd-from-scratch/coreos-install/main/bashrc >> /takeover/root/.profile
 mkdir -p /takeover/root/.ssh
 chmod 0700 /takeover/root/.ssh
 echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ41/3CaLxtJsKIav76+C7C6wPS1m9VoZKLxYHJf5ZRd user1" > /takeover/root/.ssh/authorized_keys
