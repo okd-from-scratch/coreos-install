@@ -29,8 +29,8 @@ wget https://www.busybox.net/downloads/binaries/1.26.2-defconfig-multiarch/busyb
 chmod +x /takeover/busybox
 cd /takeover
 git clone https://github.com/marcan/takeover.sh ./takeover
-mv ./takeover/* ./
-mv ./takeover/.* ./
+mv -n ./takeover/* ./
+mv -n ./takeover/.* ./
 rm ./takeover/ -rf
 gcc fakeinit.c -o fakeinit -static
 sed -i 's|^./busybox mount -t devpts devpts dev/pts|./busybox mount --bind /dev/pts dev/pts|' /takeover/takeover.sh
